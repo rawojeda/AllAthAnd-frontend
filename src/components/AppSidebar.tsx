@@ -26,14 +26,6 @@ export function AppSidebar({
     entryApi.getAllTags().then(setAllTags);
   }, []);
 
-  // Refresh tags periodically (simple approach for mock)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      entryApi.getAllTags().then(setAllTags);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <aside className="w-64 shrink-0 h-screen flex flex-col border-r border-border bg-[hsl(var(--sidebar-bg))]">
       {/* Header */}
@@ -89,7 +81,7 @@ export function AppSidebar({
       {/* Footer */}
       <div className="p-3 border-t border-border">
         <span className="text-xs text-muted-foreground">
-          Mock API · Ready for backend
+          AllAtHand · Dev
         </span>
       </div>
     </aside>
